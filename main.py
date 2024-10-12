@@ -1,6 +1,4 @@
-
-def main():
-    INTERNATIONAL_MORSE_CODE = {
+INTERNATIONAL_MORSE_CODE = {
         '''
         1. Len of a dot is one unit
         2. A dash is three units
@@ -47,8 +45,10 @@ def main():
         ' ': '    '
     }
 
+
+def main():
     def read_file(name):
-        with open(name, 'w') as src:
+        with open(name, 'r') as src:
             data = src.read().strip()
             return data
 
@@ -68,7 +68,7 @@ def main():
 
     def initialisation():
         decision = input("Enter full name of .txt file with morse code or enter it in:\n")
-        if decision[-3:] == ".txt":
+        if decision[-4:] == ".txt":
             data = read_file(decision)
         else:
             data = decision
